@@ -1,0 +1,353 @@
+/* Used https://css-tricks.com/couple-takes-sticky-footer/ for help with 
+   implementing sticky footers. */
+/*Used Technique #4 from https://css-tricks.com/css-image-replacement/
+  for image replacement*/
+/*Import Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/*Github, itch.io, and Linkedin logos were taken from https://simpleicons.org*/
+
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+/*General Body Styling*/
+body {
+  --main-background-color: #000F08;
+  --normal-font-color: #F4FFF8;
+  --secondary-color: #1C3738;
+  --ternary-color: #1A3133;
+  --link-color: #8BC7FF;
+  --header-footer-item-margin: 10px;
+  
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--main-background-color);
+  color: var(--normal-font-color);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+h2 {
+  font-size: 2em;
+  padding-bottom: 20px;
+}
+
+body::-webkit-scrollbar {
+  width: 0.75em;
+  background-color: var(--ternary-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--normal-font-color);
+}
+
+.non-footer {
+  flex: 1 0 auto;
+}
+
+main {
+  padding: 20px 0px 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--normal-font-color);
+}
+
+a:active {
+  color: var(--link-color);
+}
+
+
+
+a.social {
+  /*Image from https://lineicons.com */
+  background-image: url("images/website.svg");
+
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  text-indent: -99999px;
+  filter: invert(100%);
+}
+
+a.social:hover {
+  filter: invert(50%);
+  transform: scale(1.2);
+  transition: filter 0.2s;
+  animation: logo-pop;
+  animation-duration: 0.25s;
+}
+
+a.social[href *= "github.com"] {
+  background-image: url("images/github.svg");
+}
+
+a.social[href *= "itch.io"] {
+  background-image: url("images/itchdotio.svg");
+}
+
+a.social[href *= "linkedin.com"] {
+  background-image: url("images/linkedin.svg");
+}
+
+a[download] {
+  /*Image from https://lineicons.com */
+  background-image: url("images/download.svg");
+
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  text-indent: -99999px;
+  margin: 20px;
+  filter: invert(100%);
+}
+
+a[download]:hover {
+  filter: invert(50%);
+  transform: scale(1.2);
+  transition: filter 0.2s;
+  animation: logo-pop;
+  animation-duration: 0.25s;
+}
+
+ul.social-list {
+  list-style-type: none;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+no-style {
+  display: none;
+}
+
+/*Header Styling*/
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+    "header nav"
+    "popup popup";
+  justify-items: start;
+  align-content: start;
+  background-color: var(--secondary-color);
+}
+
+header>h1 {
+  margin: var(--header-footer-item-margin);
+  font-family: 'Playfair Display', display;
+  letter-spacing: 0.15em;
+  font-size: 2em;
+  font-weight: 100;
+  order: 0;
+  grid-area: header;
+}
+
+header>label {
+  --drop-down-label-size: 50px;
+  margin: var(--header-footer-item-margin);
+  text-indent: -99999px;
+  background-image: url(/images/tab.svg);
+  width: var(--drop-down-label-size);
+  height: var(--drop-down-label-size);
+  grid-area: nav;
+  justify-self: end;
+  align-self: center;
+  z-index: 2;
+  transition: filter 0.2s;
+}
+
+header>label:hover {
+  filter: brightness(50%);
+  cursor: pointer;
+}
+
+#dropdown-trigger {
+  display: none;
+}
+
+nav>ul {
+  margin: var(--header-footer-item-margin);
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header a:link {
+  color: var(--normal-font-color);
+}
+header a:visited {
+  color: var(--normal-font-color);
+}
+header a:hover {
+  color: var(--link-color);
+}
+header a:active {
+  color: var(--normal-font-color);
+}
+
+/*Footer Styling*/
+footer {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 1.25em;
+  flex-shrink: 0;
+  gap: 20px;
+  padding: 20px;
+}
+
+footer ul {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: var(--header-footer-item-margin);
+  padding: 0px;
+  list-style-type: none;
+}
+
+/*Media Queries*/
+@media (max-width: 640px) {
+  header>nav {
+    grid-area: popup;
+    font-size: 2.5em;
+    justify-self: center;
+    align-self: center;
+    display: none;
+  }
+  
+  header>nav>ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  #dropdown-trigger:checked ~ nav{
+    animation-name: change-height;
+    animation-duration: 1s;
+    max-height: 600px;
+    display: block;
+  }
+  
+  #dropdown-trigger:checked ~ nav>ul{
+    animation-name: pop-down;
+    animation-duration: 0.5s;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  
+  header>nav {
+    grid-area: popup;
+    font-size: 2.5em;
+    justify-self: center;
+    align-self: center;
+    display: none;
+  }
+  
+  header>nav>ul {
+    flex-direction: row;
+    text-align: center;
+  }
+  
+  #dropdown-trigger:checked ~ nav{
+    animation-name: change-height;
+    animation-duration: 1s;
+    max-height: 600px;
+    display: block;
+  }
+  
+  #dropdown-trigger:checked ~ nav>ul{
+    animation-name: pop-down;
+    animation-duration: 0.5s;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    grid-area: nav;
+    justify-self: end;
+    align-self: center;
+  }
+  
+  header>nav>ul {
+    font-size: 2em;
+    flex-direction: row;
+  }
+  
+  header>label {
+    display: none;
+  }
+}
+
+/*Keyframes*/
+@keyframes change-height {
+  from { 
+    max-height: 0px;
+  }
+
+  to {
+    max-height: 1000px;
+  }
+}
+
+@keyframes pop-down {
+  0% { 
+    transform: translateY(-300%);
+  }
+
+  75% {
+    transform: translateY(5%);
+  }
+  
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes logo-pop {
+  0% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(1.4);
+  }
+  
+  100% {
+    transform: scale(1.2);
+  }
+}

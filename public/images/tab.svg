@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229 13.229"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="tab.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="14.481547"
+     inkscape:cx="25.30807"
+     inkscape:cy="23.719842"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     units="px"
+     showborder="true"
+     borderlayer="true" />
+  <defs
+     id="defs9" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke-width:0.264583"
+       id="rect921"
+       width="49.886715"
+       height="15.617489"
+       x="0.17848553"
+       y="-0.089242786" />
+    <rect
+       style="fill:#f4fff8;fill-opacity:1;stroke-width:0.264583"
+       id="rect1530"
+       width="13.229167"
+       height="2.6458335"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#f4fff8;fill-opacity:1;stroke-width:0.264583"
+       id="rect1530-6"
+       width="13.229167"
+       height="2.6458335"
+       x="7.7209474e-09"
+       y="5.291667" />
+    <rect
+       style="fill:#f4fff8;fill-opacity:1;stroke-width:0.264583"
+       id="rect1530-6-4"
+       width="13.229167"
+       height="2.6458335"
+       x="7.7209474e-09"
+       y="10.583334" />
+  </g>
+</svg>

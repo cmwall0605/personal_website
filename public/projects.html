@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <meta name="author" content="Chad Wall"> 
+    <meta name="description" content="This portfolio was made to highlight my 
+      skills, expe  rience, and projects">
+    <!--Viewport for mobile accessibility from 
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "icon" href = "images/favicon.ico">
+    <link rel = "stylesheet" href = "main.css">
+    <script type="module" src="projects.js"></script>
+    <noscript>
+      <style>
+        .expand-collapse-buttons {
+          visibility: hidden;
+        }
+      </style>
+    </noscript>
+    <style>
+      
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      main h2 {
+        text-align: center;
+      }
+      
+      main>ul {
+        list-style: none;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+      }
+      
+      .project {
+        background-color: var(--ternary-color);
+        display: -ms-grid;
+        display: grid;
+        width: 80vw;
+        height: auto;
+      }
+      
+      .title {
+        grid-area: title;
+        vertical-align: middle;
+        margin-bottom: auto;
+        padding: 10px;
+        margin: 0px;
+      }
+      
+      .project-dropdown-indicator {
+        grid-area: expand;
+        justify-self: end;
+        background-image: url(/images/plus.svg);
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        transition: filter 0.2s;
+      }
+     
+      .project-dropdown-indicator:hover {
+        filter: brightness(50%);
+        cursor: pointer;
+      }
+      
+      .project-dropdown-trigger:checked ~ .project-dropdown-indicator{
+        background-image: url(/images/minus.svg);
+      }
+      
+      .project-dropdown-trigger:checked ~ .showcase {
+        visibility: visible;
+        max-height: 1000px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    
+      .project-dropdown-trigger:checked ~ .description {
+        visibility: visible;
+        max-height: 1000px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      .project-dropdown-trigger {
+        display: none;
+      }
+      
+      .showcase {
+        grid-area: showcase;
+        opacity: 0;
+        max-height: 0px;
+        transition: max-height 0.5s, opacity 0.5s;
+        pointer-events: none;
+      }
+      
+      .description {
+        grid-area: description;
+        margin: 10px;
+        opacity: 0;
+        max-height: 0px;
+        transition: max-height 0.5s, opacity 0.5s;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      
+      .description ul {
+        padding: 20px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+      
+      main button {
+        background: none;
+        border: none;
+        color: var(--link-color);
+        font-size: 2em;
+        cursor: pointer;
+      }
+      
+      main button:hover {
+        color: var(--normal-font-color);
+      }
+      
+      main button:active {
+        color: var(--link-color);
+      }
+      
+      #top-button-set {
+        margin: 10px;
+      }
+      
+      /* Bottom set of expand buttons will be hidden until atleast one 
+         project is open. Implement in Javascript. */
+      #bottom-button-set {
+        visibility: hidden;
+        margin: 10px;
+      }
+      
+      @media (max-width: 640px) {
+        .project {
+          display: -ms-grid;
+          display: grid;
+          grid-template-areas: 
+          "title expand"
+          "showcase showcase"
+          "description description";
+        }
+        main h2 {
+          font-size: 6vw;
+        }        
+        .title {
+          font-size: 5vw;
+        }
+        .description {
+          font-size: 5vw;
+        }
+        .showcase {
+          width: 90%;
+          height: auto;
+          place-self: center;
+        }
+      }
+      
+      @media (min-width: 640px) and (max-width: 1024px) {
+        .project {
+          grid-template-areas: 
+            "title expand"
+            "showcase showcase"
+            "description description";
+          min-width: 600px;
+        }
+        main h2 {
+          font-size: 2.5em;
+        }
+        .title {
+          font-size: 2em;
+        }
+        .description {
+          font-size: 1.5em;
+        }
+        .showcase {
+          width: 90%;
+          height: auto;
+          place-self: center;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .project {
+          grid-template-areas: 
+            "title    expand"
+            "showcase description";
+          -ms-grid-columns: 60vw;
+          grid-template-columns: 60vw;
+          min-width: 1000px;
+        }
+        main h2 {
+          font-size: 2em;
+        }
+        .title {
+          font-size: 1.75em;
+        }
+        
+        .description {
+          font-size: 1.25em;
+        }
+        
+        .showcase {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="non-footer">
+      <header>
+        <h1><a href="index.html" >Chad Wall</a></h1>
+        <label for="dropdown-trigger">dropdown</label>
+        <input type="checkbox" name="dropdown-trigger" id="dropdown-trigger">
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="resume.html">Resume</a>
+            </li>
+            <li>
+              <b>Projects</b>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <h2>Projects</h2>
+        <div id="top-button-set" class="expand-collapse-buttons">
+          <button type="button" class="expand">Expand All</button>
+          <button type="button" class="collapse">Collapse All</button>
+        </div>
+        <ul>
+          <li class="project" id="narcolepsy">
+            <h3 class="title">Narcolepsy</h3>
+            <input type="checkbox" name="project-dropdown-trigger" class="project-dropdown-trigger" id="narcolepsy-trigger">
+            <label class="project-dropdown-indicator" for="narcolepsy-trigger"></label>
+            <video preload="none" poster="./images/narcolepsy_poster.webp" controls width="1280" height="720" class="showcase">
+              <source src="videos/NacrolepsyVideo.mp4" type="video/mp4">
+              <p>Sorry! Your browser does not support HTML5 video. 
+                <a href="videos/NacrolepsyVideo.mp4">Video Link</a></p>
+            </video>
+            <section class="description">
+              <h4>Description</h4>
+                <p>
+                  This project is a 3rd person shooter currently in development.
+                  It is made using the Godot engine and written in GDScript.
+                  Additionally, models were made using Blender, GIMP, and Krita.
+                </p>
+                <ul>
+                  <li>
+                    <a class="social" href="https://github.com/cmwall0/Narcolepsy">Github Repo</a>
+                  </li>
+                  <li>
+                    <a class="social" href="https://pyronautica.itch.io/nacrolepsy">
+                      Online Game Demo
+                    </a>
+                  </li>
+                </ul>
+            </section>
+          </li>
+          <li class="project" id="shadow-mapping">
+            <h3 class="title">Shadow Mapping</h3>
+            <input type="checkbox" name="project-dropdown-trigger" class="project-dropdown-trigger" id="shadow-trigger">
+            <label class="project-dropdown-indicator" for="shadow-trigger"></label>
+            <video preload="none" poster="./images/shadows_poster.webp" controls width="1280" height="720" class="showcase">
+              <source src="videos/ShadowMappingVideo.mp4" type="video/mp4">
+              <p>Sorry! Your browser does not support HTML5 video. 
+                <a href="videos/ShadowMappingVideo.mp4">Video Link</a></p>
+            </video>
+            <section class="description">
+              <h4>Description</h4>
+                <p>
+                  This project uses multiple shadow mapping techniques to highlight
+                  their impact on shadows in a 3D setting. This project was made
+                  using C++ and GLSL. This was made in collaboration with 
+                  <a href="https://github.com/bobobobosu">
+                    Bo
+                  </a>.
+                </p>
+                <ul>
+                  <li>
+                    <a class="social" href="https://github.com/bobobobosu/cse167-final-project">
+                      Github Repo</a>
+                  </li>
+                </ul>
+            </section>
+          </li>
+          <li class="project" id="pomodoro-timer">
+            <h3 class="title">Pomodoro Timer</h3>
+            <input type="checkbox" name="project-dropdown-trigger" class="project-dropdown-trigger" id="pomodoro-trigger">
+            <label class="project-dropdown-indicator" for="pomodoro-trigger"></label>
+            <video preload="none" poster="./images/timer_poster.webp" controls width="1280" height="720" class="showcase">
+              <source src="videos/PomodoroTimerVideo.mp4" type="video/mp4">
+              <p>Sorry! Your browser does not support HTML5 video. 
+                <a href="videos/PomodoroTimerVideo.mp4">Video Link</a></p>
+            </video>
+            <section class="description">
+              <h4>Description</h4>
+                <p>
+                  This project was initially started as a way for students to learn
+                  software engineering principles such as the agile development
+                  technique. In this project, I worked with eight other students to
+                  develop a website to promote productivity by using the 
+                  <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">pomodoro
+                  technique</a>. I personally acted as the lead builder and tester,
+                  using techniques such as linting, unit testing, E2E testing,
+                  documentation, automation, minification, and deployment. This was 
+                  made in collaboration with Anvitaa Sekhsaria, Katie Hsieh, Mingyang
+                  Wang, Nirmal Agnihotri, Ruisen Huang (Ray), Tsun Wai Siu (Ron), 
+                  Varun Singh, and Zihao Kong.
+                </p>
+                <ul>
+                  <li>
+                    <a class="social" href="https://github.com/Zihaokong/cse110-w21-group27">
+                      Github Repo
+                    </a>
+                  </li>
+                  <li>
+                    <a class="social" href="https://zihaokong.github.io/cse110-w21-group27/">
+                      Website
+                    </a>
+                  </li>
+                </ul>
+            </section>
+          </li>
+        </ul>
+        <template id="project-template">
+          <li>
+            <h3></h3>
+            <video controls>
+              <source src="" type="video/mp4">
+              <p><a href=""></a></p>
+            </video>
+            <p></p>
+            <ul></ul>
+          </li>
+        </template>
+        <div id="bottom-button-set" class="expand-collapse-buttons">
+          <button type="button" class="expand">Expand All</button>
+          <button type="button" class="collapse">Collapse All</button>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <no-style>
+        Warning! Styling is disabled!
+      </no-style>
+      <noscript>
+        Warning! Javascript is disabled!
+      </noscript>
+      <section>
+        <h2>Chad Wall</h2> 
+        <p>
+          2022 <br>
+          <a href="mailto:chad.makanaokeakua.wall@gmail.com">
+            chad.makanaokeakua.wall@gmail.com
+          </a>
+        </p> 
+      </section>
+      <section>
+        <h2>Pages</h2>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="resume.html">Resume</a>
+            </li>
+            <li>
+              <b>Projects</b>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section>
+        <h2>Social</h2>
+        <ul class="social-list">
+          <li>
+            <a class="social" href="https://github.com/cmwall0">
+              Github (Primary)
+            </a>
+          </li>
+          <li>
+            <a class="social" href="https://www.linkedin.com/in/chad-m-wall/">
+              LinkedIn® professional networking services
+            </a>
+          </li>
+          <li>
+            <a class="social" href="https://pyronautica.itch.io/">
+              Itch.io
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+  </body>
+</html>

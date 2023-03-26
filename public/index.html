@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="author" content="Chad Wall"> 
+    <meta name="description" content="This portfolio was made to highlight my 
+      skills, experience, and projects.">
+    <!--Viewport for mobile accessibility from 
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "icon" href = "images/favicon.ico">
+    <link rel = "stylesheet" href = "main.css">
+    <style>
+      main {
+        display: flex;
+        justify-content: space-evenly;
+        align-content: space-around;
+        align-items: flex-start;
+      }
+      
+      #about-me {
+        order: 0;
+      }
+      
+      #about-me p {
+        line-height: 1.6;
+      }
+      
+      #about-me .social-list {
+        padding-top: 20px;
+      }
+      
+      #gallery img {
+        box-sizing: border-box;
+        padding: 10px;
+        background-color: var(--ternary-color);
+      }
+      
+      #gallery h2 {
+        text-align: center;
+      }
+      
+      #gallery {
+        order: 1;
+      }
+      
+      #gallery ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        padding: 0px
+      }
+      
+      #gallery li {
+        position: relative;
+      }
+      
+      #gallery h3 {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        pointer-events:none;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      
+      #gallery img {
+        transition: transform 0.5s;
+      }
+      
+      #gallery a:hover + h3 {
+        opacity: 1;
+      }
+      
+      #gallery img:hover {
+        animation-name: darken;
+        animation-duration: 0.5s;
+        filter: brightness(20%);
+        transform: scale(1.1);
+      }
+      
+      @media (max-width: 640px) {
+        main {
+          flex-wrap: wrap;
+        }
+        #about-me{
+          width: 90vw;
+          padding-left: 5vw;
+          padding-right: 5vw;
+        }
+        
+        #about-me p{
+          font-size: 5vw;
+        }
+        
+        #about-me li{
+          font-size: 6vw;
+        }
+        
+        #about-me h2 {
+          text-align: center;
+        }
+        
+        #gallery {
+          width: 90vw;
+          padding-left: 5vw;
+          padding-right: 5vw;
+        }
+        
+        #gallery ul {
+          flex-wrap: wrap;
+          align-content: center;
+          flex-direction: column;
+        }
+        
+        #gallery img {
+          width: 60vw;
+          height: auto;
+        }
+      }
+      
+      @media (min-width: 640px) and (max-width: 1024px) {
+        main {
+          flex-wrap: wrap;
+        }
+        
+        #about-me{
+          width: 90vw;
+          padding-left: 5vw;
+          padding-right: 5vw;
+        }
+        
+        #about-me h2 {
+          text-align: center;
+        }
+        
+        #about-me p{
+          font-size: 1.5em;
+        }
+        
+        #about-me li{
+          font-size: 1.75em;
+        }
+        
+        #gallery {
+          width: 90vw;
+          padding-left: 5vw;
+          padding-right: 5vw;
+        }
+        
+        #gallery ul {
+          flex-wrap: wrap;
+          align-content: center;
+          flex-direction: row;
+        }
+        
+        #gallery img {
+          width: 30vw;
+          height: auto;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        main {
+          flex-wrap: nowrap;
+        }
+        #about-me{
+          position: -webkit-sticky;
+          position: sticky;
+          top: 63px;
+          width: 30vw;
+        }
+        
+        #about-me p{
+          font-size: 1.25em;
+        }
+        
+        #about-me li{
+          font-size: 1.5em;
+        }
+        
+        #gallery {
+          width: 50vw;
+        }
+        
+        #gallery ul {
+          flex-wrap: wrap;
+          align-content: flex-start;
+          flex-direction: row;
+        }
+        
+        #gallery img {
+          width: 20vw;
+          min-width: 300px;
+          height: auto;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="non-footer">
+      <header>
+        <h1><a href="index.html" >Chad Wall</a></h1>
+        <label for="dropdown-trigger">dropdown</label>
+        <input type="checkbox" name="dropdown-trigger" id="dropdown-trigger">
+        <nav>
+          <ul>
+            <li>
+              <b>Home</b>
+            </li>
+            <li>
+              <a href="resume.html">Resume</a>
+            </li>
+            <li>
+              <a href="projects.html">Projects</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="gallery">
+          <h2>Gallery</h2>
+          <ul>
+            <li>
+              <a href="/projects.html#narcolepsy">
+                <picture>
+                  <source srcset="images/narcolepsy_large.png" 
+                    type="image/png"
+                    media="(min-width: 1024px)">
+                    <img src="images/narcolepsy_small.png" 
+                    alt="Picture of player in Narcolepsy shooting a monster."
+                    width="700" height="700">
+                </picture>
+              </a>
+              <h3>Narcolepsy</h3>
+            </li>
+            <li>
+              <a href="/projects.html#pomodoro-timer">
+                <picture>
+                  <source srcset="images/timer_large.webp"
+                    type="image/webp"
+                    media="(min-width: 1024px)">
+                  <source srcset="images/timer_large.png"
+                    type="image/png"
+                    media="(min-width: 1024px)">
+                  <source srcset="images/timer_small.webp"
+                    type="image/webp">
+                  <img src="images/timer_small.png"
+                    alt="Image of the timer page for the pomodoro website." 
+                    width="454" height="410">
+                </picture>
+              </a>
+              <h3>Pomodoro Timer</h3>
+            </li>
+            <li>
+              <a href="/projects.html#shadow-mapping">
+                <picture>
+                  <source srcset="images/shadows_large.png" 
+                    type="image/png"
+                    media="(min-width: 1024px)">
+                  <img src="images/shadows_small.png"
+                    alt="Image of shadow mapping with PCF." 
+                    width="400" height="400">
+                </picture>
+              </a>
+              <h3>Shadow Mapping</h3>
+            </li>
+            <li>
+              <a href="/resume.html#robotics">
+                <picture>
+                  <source srcset="images/robotics_team_large.webp"
+                    type="image/webp"
+                    media="(min-width: 1024px)">
+                  <source srcset="images/robotics_team_large.jpg"
+                    type="image/jpg"
+                    media="(min-width: 1024px)">
+                  <source srcset="images/robotics_team_small.webp"
+                    type="image/webp">
+                  <img src="images/RoboticsTeamSmall.jpg"
+                    alt="Image of team 2445 winning the 2016 Hawaii Regionals." 
+                    width="747" height="283">
+                </picture>
+              </a>
+              <h3>FRC Robotics</h3>
+            </li>
+          </ul>
+        </section>
+        <section id="about-me">
+          <h2>About Me</h2>
+          <p>
+            Hello and welcome to my portfolio! <br> 
+            My name is Chad Makanaokeakua Wall and I am currently a 4th year 
+            computer science major at the University of California: San Diego. I 
+            am expected to graduate with a Bachelor of Science Degree in June 2022. My interests in computer science
+            are in web development, computer graphics, and game design. My
+            interests outside of computer science include hiking, 3D modeling,
+            and digital art. If you have any inquiries for me, please email me at
+            <a href="mailto:chad.makanaokeakua.wall@gmail.com">chad.makanaokeakua.wall@gmail.com</a>, 
+            and enjoy your stay here on my little slice of the internet.
+          </p>
+          <ul class="social-list">
+            <li>
+              <a class="social" href="https://github.com/cmwall0">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a class="social" href="https://www.linkedin.com/in/chad-m-wall/">
+                LinkedIn® professional networking services
+              </a>
+            </li>
+            <li>
+              <a class="social" href="https://pyronautica.itch.io/">
+                itch.io
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <no-style>
+        Warning! Styling is disabled!
+      </no-style>
+      <noscript>
+        Warning! Javascript is disabled!
+      </noscript>
+      <section>
+        <h2>Chad Wall</h2> 
+        <p>
+          2022 <br>
+          <a href="mailto:chad.makanaokeakua.wall@gmail.com">
+            chad.makanaokeakua.wall@gmail.com
+          </a>
+        </p> 
+      </section>
+      <section>
+        <h2>Pages</h2>
+        <nav>
+          <ul>
+            <li>
+              <b>Home</b>
+            </li>
+            <li>
+              <a href="resume.html">Resume</a>
+            </li>
+            <li>
+              <a href="projects.html">Projects</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section>
+        <h2>Social</h2>
+        <ul class="social-list">
+          <li>
+            <a class="social" href="https://github.com/cmwall0">
+              Github
+            </a>
+          </li>
+          <li>
+            <a class="social" href="https://www.linkedin.com/in/chad-m-wall/">
+              LinkedIn® professional networking services
+            </a>
+          </li>
+          <li>
+            <a class="social" href="https://pyronautica.itch.io/">
+              Itch.io
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+  </body>
+</html>

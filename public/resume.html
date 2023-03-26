@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <meta name="author" content="Chad Wall"> 
+    <meta name="description" content="This portfolio was made to highlight my 
+      skills, experience, and projects">
+      <!--Viewport for mobile accessibility from 
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "icon" href = "images/favicon.ico">
+    <link rel = "stylesheet" href = "main.css">
+    <style>
+      #resume {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: var(--ternary-color);
+      }
+      #resume hr {
+        width: 100%;
+      }
+      #resume p {
+        line-height: 1.6;
+      }
+      #resume li {
+        margin-top: 10px;
+      }
+      hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      
+      li {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      
+      table {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      
+      th{
+        padding: 10px;
+      }
+      
+      tr:nth-child(odd) {
+        background-color: var(--main-background-color);
+      }
+      
+      h3 {
+        text-align: center;
+      }
+      
+      @media (max-width: 640px) {
+        #resume {
+          font-size: 4vw;
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      
+      @media (min-width: 640px) and (max-width: 1024px) {
+        #resume {
+          font-size: 1.5em;
+          min-width: 500px;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        #resume {
+          font-size: 1.25em;
+          min-width: 750px;
+          width: 60%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="non-footer">
+      <header>
+        <h1><a href="index.html" >Chad Wall</a></h1>
+        <label for="dropdown-trigger">dropdown</label>
+        <input type="checkbox" name="dropdown-trigger" id="dropdown-trigger">
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <b>Resume</b>
+            </li>
+            <li>
+              <a href="projects.html">Projects</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="resume">
+          <h2>Resume</h2>
+          <a href="documents/ChadWallResume.pdf" download>Download</a>
+          <section>
+            <h3>Education</h3>
+            <p><strong>University of California, San Diego</strong> <i>Regents 
+              Honor</i> <br>
+              Bachelor of Science, Computer Science, GPA 3.8 <br>
+              Sep 2018 - <em>Anticipated</em> Jun 2022</p>
+            <table>
+              <caption>
+                Upper Division Computer Science Courses Taken
+              </caption>
+              <colgroup>
+                <col span="2" class="title">
+                <col span="2" class="details">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Professor</th>
+                  <th scope="col">Quarter Taken</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">CSE 100</th>
+                  <td>Advanced Data Structures</td>
+                  <td>Professor Cao, Yingjun</td>
+                  <td>Winter 2020</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 105</th>
+                  <td>Theory of Computation</td>
+                  <td>Professor Jones, Miles E</td>
+                  <td>Winter 2020</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 130</th>
+                  <td>Programming Language: Princpal & Paradigm</td>
+                  <td>Professor Polikarpova, Nadezhda</td>
+                  <td>Spring 2020</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 140</th>
+                  <td>Component & Design Tech/Digtal Systems</td>
+                  <td>Professor Chin, Bryan W</td>
+                  <td>Spring 2020</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 103</th>
+                  <td>Practical Intro/Probability & Statistics</td>
+                  <td>Professor Dasgupta, Sanjoy</td>
+                  <td>Fall 2020</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 141</th>
+                  <td>Intro/Computer Architecture</td>
+                  <td>Professor Tullsen, Dean Michael</td>
+                  <td>Fall 2020</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 101</th>
+                  <td>Design & Analysis of Algorithm</td>
+                  <td>Professor Jones, Miles E</td>
+                  <td>Winter 2021</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 110</th>
+                  <td>Software Engineering</td>
+                  <td>Professor Powell, Thomas Allan</td>
+                  <td>Winter 2021</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 151A</th>
+                  <td>Intro to Machine Learning</td>
+                  <td>Professor Chaudhuri, Kamalika</td>
+                  <td>Winter 2021</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 120</th>
+                  <td>Princ/Computer Operating Systm</td>
+                  <td>Professor Zhou, Yuan-Yuan</td>
+                  <td>Spring 2021</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 148</th>
+                  <td>Advanced Processor Architecture Design Project</td>
+                  <td>Professor Tullsen, Dean Michael</td>
+                  <td>Spring 2021</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 127</th>
+                  <td>Introduction to Computer Security</td>
+                  <td>Professor Stefan, Deian</td>
+                  <td>Fall 2021</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 167</th>
+                  <td>Computer Graphics</td>
+                  <td>Professor Chern, Albert Ren-Haur</td>
+                  <td>Fall 2021</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 169</th>
+                  <td>Computer Animation</td>
+                  <td>Professor Rotenburg, Steven Paul</td>
+                  <td>Winter 2022</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 132A</th>
+                  <td>Database System Principles</td>
+                  <td>Professor Vianu, Victor Dan</td>
+                  <td>Winter 2022</td>
+                </tr>
+                <tr>
+                  <th scope="row">CSE 134B</th>
+                  <td>Web Client Languages</td>
+                  <td>Professor Powell, Thomas Allan</td>
+                  <td>Winter 2022</td>
+                </tr>
+              </tbody>  
+            </table>
+          </section>
+          <hr>
+          <section>
+            <h3>Skills</h3>
+            <ul>
+              <li>
+                <b>Programming Languages:</b> Assembly, C, C++, C#, Java, 
+                  GDScript, Python, GLSL
+              </li>
+              <li>
+                <b>Computer Science Principles:</b> Object Oriented Design, Data 
+                  Structures, Algorithm Design & Analysis, Computer Architecture, 
+                  Machine Learning, Operating Systems
+              </li>
+              <li>
+                <b>Development Tools:</b> Git/Github, SVN, Visual Studio 2019, 
+                  Visual Studio Code, Eclipse, Jest, Cypress, Unity, Godot
+              </li>
+              <li>
+                <b>Agile Software Development:</b> Building, Testing, 
+                  Documentation
+              </li>
+            </ul>
+          </section>
+          <hr>
+          <section>
+            <h3>Experience</h3>
+            <ul>
+              <li id="robotics">
+                <h4>FIRST Robotics Team 2445, <i>Programmer</i></h4>
+                <ul>
+                  <li>Kapolei, HI; Jan 2016 - Mar 2018</li>
+                  <li>Worked six hours each day after school, including weekends, 
+                    to design, develop, and test the software used for the team's 
+                    robot.</li>
+                  <li>Acted as the team leader for two years in the programming 
+                    division of the team.</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <no-style>
+        Warning! Styling is disabled!
+      </no-style>
+      <noscript>
+        Warning! Javascript is disabled!
+      </noscript>
+      <section>
+        <h2>Chad Wall</h2> 
+        <p>
+          2022 <br>
+          <a href="mailto:chad.makanaokeakua.wall@gmail.com">
+            chad.makanaokeakua.wall@gmail.com
+          </a>
+        </p> 
+      </section>
+      <section>
+        <h2>Pages</h2>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <b>Resume</b>
+            </li>
+            <li>
+              <a href="projects.html">Projects</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section>
+        <h2>Social</h2>
+        <ul class="social-list">
+          <li>
+            <a class="social" href="https://github.com/cmwall0">
+              Github (Primary)
+            </a>
+          </li>
+          <li>
+            <a class="social" href="https://www.linkedin.com/in/chad-m-wall/">
+              LinkedIn® professional networking services
+            </a>
+          </li>
+          <li>
+            <a class="social" href="https://pyronautica.itch.io/">
+              Itch.io
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+  </body>
+</html>
